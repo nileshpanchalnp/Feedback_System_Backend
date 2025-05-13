@@ -14,10 +14,12 @@ cd .\Feedback_System_Backend\
 
 npm install
 
-create a .env file and add 
+Please create a .env file and add the following variables
 
 JWT_SECRET = "Password"
+
 MONGO_URl = "mongodb+srv://nileshpanchal4411:Nilesh1476@cluster0.ayy553u.mongodb.net/EventTask"
+
 PORT = 8000
 
 nodemon ./index.js
