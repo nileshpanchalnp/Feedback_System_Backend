@@ -3,6 +3,25 @@
 # Project Overview
 The Event Feedback System is a full-stack **web application built using React.js for the frontend and Node.js with Express.js for the backend**. **It allows users to create events, submit feedback, and manage their feedback history efficiently**. All data is securely stored and managed in the cloud using **MongoDB Atlas**.
 
+  
+# Installation & Setup
+
+# 1. Clone the Repository
+git clone https://github.com/nileshpanchalnp/Feedback_System_Backend.git
+
+# 2. Install Dependencies
+cd .\Feedback_System_Backend\
+
+npm install
+
+create a .env file and add 
+
+JWT_SECRET = "Password"
+MONGO_URl = "mongodb+srv://nileshpanchal4411:Nilesh1476@cluster0.ayy553u.mongodb.net/EventTask"
+PORT = 8000
+
+nodemon ./index.js
+
 # 🔑 Key Features
 **✅ Event Creation**
 Users can create new events by providing details like event name, date, and description.
@@ -32,16 +51,6 @@ Secure login and sign-up system using JWT (JSON Web Tokens) to protect user data
   
   **Deployment Frontend**: Hosted on **Render** 
 
-  
-# Installation & Setup
-
-# 1. Clone the Repository
-git clone https://github.com/nileshpanchalnp/Feedback_System_Backend.git
-
-# 2. Install Dependencies
-npm install
-
-nodemon ./index.js
 
 
 # Project Demonstration
