@@ -48,7 +48,7 @@ git clone https://github.com/nileshpanchalnp/Feedback_System_Backend
 # 2. Install Dependencies
 npm install
 
-nodemon ./index.html
+nodemon ./index.js
 
 
 # Project Demonstration
