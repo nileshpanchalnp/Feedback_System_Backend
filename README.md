@@ -19,14 +19,7 @@ Users can update or delete their own feedback anytime.
 **🔐 User Authentication**
 Secure login and sign-up system using JWT (JSON Web Tokens) to protect user data.
 
-**🔒 Protected Routes**
-Only authenticated users can access feedback functionalities and personal history.
 
-**🌐 Cloud Database**
-All event and feedback data is stored in MongoDB Atlas, ensuring scalability, reliability, and security.
-
-**📱 Responsive Design**
-The app is mobile-friendly and works smoothly on all screen sizes.
 
 # Technical Specifications:
   **Frontend**: React.js (React Router, Hooks, Tailwind CSS)
@@ -37,13 +30,13 @@ The app is mobile-friendly and works smoothly on all screen sizes.
   
   **State Management**: React Hooks
   
-  **Deployment**: Hosted on render 
+  **Deployment Frontend**: Hosted on **Render** 
 
   
 # Installation & Setup
 
 # 1. Clone the Repository
-git clone https://github.com/nileshpanchalnp/Feedback_System_Backend
+git clone https://github.com/nileshpanchalnp/Feedback_System_Backend.git
 
 # 2. Install Dependencies
 npm install
@@ -56,7 +49,7 @@ nodemon ./index.js
 
 🌍 Live Demo: https://feedback-system-amber.vercel.app/
 
-🌍 server live link: https://feedback-system-backend-lo6w.onrender.com/
+**🌍 server live link: https://feedback-system-backend-lo6w.onrender.com/**
 
 # Contributors
 **Nilesh Panchal** - Full-stack Developer
