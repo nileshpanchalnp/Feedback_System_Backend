@@ -37,7 +37,7 @@ The app is mobile-friendly and works smoothly on all screen sizes.
   
   **State Management**: React Hooks
   
-  **Deployment**: Hosted on Vercel 
+  **Deployment**: Hosted on render 
 
   
 # Installation & Setup
@@ -55,6 +55,8 @@ nodemon ./index.js
 📽 Loom Video: [Provide the Loom video link here]
 
 🌍 Live Demo: https://feedback-system-amber.vercel.app/
+
+🌍 server live link: https://feedback-system-backend-lo6w.onrender.com/
 
 # Contributors
 **Nilesh Panchal** - Full-stack Developer
