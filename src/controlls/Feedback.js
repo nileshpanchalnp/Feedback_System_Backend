@@ -5,25 +5,31 @@ const Event = require('../models/Event'); // Assuming you have an Event model fo
 const createFeedback = async (req, res) => {
   try {
     const { rating, comment, eventId } = req.body;
-    const UserId = req.user.id; // Assuming you have user authentication (JWT token)
-    // Validate the event
+    const UserId = req.user.id; // From JWT middleware
+
+    if (!rating || !eventId) {
+      return res.status(400).json({ message: 'Rating and Event ID are required' });
+    }
+
     const event = await Event.findById(eventId);
     if (!event) {
       return res.status(404).json({ message: 'Event not found' });
     }
 
-    // Create a new feedback entry
-    const feedback = new Feedback({
+    const feedbackData = {
       rating,
-      comment,
       eventId,
-      userId: UserId
-    });
+      userId: UserId,
+    };
 
-    // Save feedback to the database
+    if (comment && comment.trim() !== '') {
+      feedbackData.comment = comment;
+    }
+
+    const feedback = new Feedback(feedbackData);
     await feedback.save();
 
-     // Link feedback to the Event
+    // Link feedback to the event
     await Event.findByIdAndUpdate(eventId, {
       $push: {
         comments: feedback._id,
@@ -82,5 +88,36 @@ const deleteFeedback = async (req, res) => {
   }
 };
 
+const updateFeedback = async (req, res) => {
+  try {
+    const { id } = req.params; 
+    const userId = req.user.id; 
+    const { rating, comment } = req.body;
 
-module.exports = { createFeedback ,getFeedbackForUSER , deleteFeedback};
+    const feedback = await Feedback.findById(id);
+
+    if (!feedback) {
+      return res.status(404).json({ message: 'Feedback not found' });
+    }
+
+    if (feedback.userId.toString() !== userId) {
+      return res.status(403).json({ message: 'Unauthorized to update this feedback' });
+    }
+
+    if (rating !== undefined) feedback.rating = rating;
+    if (comment !== undefined) feedback.comment = comment;
+
+    const updatedFeedback = await feedback.save();
+
+    return res.status(200).json({
+      message: 'Feedback updated successfully',
+      feedback: updatedFeedback,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error updating feedback' });
+  }
+};
+
+
+module.exports = { createFeedback ,getFeedbackForUSER , deleteFeedback, updateFeedback};

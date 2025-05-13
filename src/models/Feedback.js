@@ -15,7 +15,6 @@ const feedbackSchema = new mongoose.Schema(
         },
         comment: {
             type: String,
-            required: true
         },
         userId: {
             type:String,
@@ -28,5 +27,4 @@ const feedbackSchema = new mongoose.Schema(
 
 // Feedback Model
 const Feedback = mongoose.model('Feedback', feedbackSchema);
-
 module.exports = Feedback;
