@@ -52,4 +52,4 @@ nodemon ./index.js
 **🌍 server live link: https://feedback-system-backend-lo6w.onrender.com/**
 
 # Contributors
-**Nilesh Panchal** - Full-stack Developer
+**Nilesh Panchal** - MERN-STACK Developer
