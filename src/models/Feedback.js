@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Feedback Schema
 const feedbackSchema = new mongoose.Schema(
     {
         eventId: {

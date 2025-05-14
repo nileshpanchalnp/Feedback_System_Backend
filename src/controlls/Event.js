@@ -13,7 +13,6 @@ const createEvent = async (req, res) => {
       organizer
     } = req.body;
 
-    // Validation (Optional but recommended)
     if (!name || !date || !organizer) {
       return res.status(400).json({ error: 'Name, date, and organizer are required' });
     }

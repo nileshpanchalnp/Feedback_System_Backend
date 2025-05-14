@@ -1,11 +1,11 @@
 const Feedback = require('../models/Feedback');
-const Event = require('../models/Event'); // Assuming you have an Event model for event details
+const Event = require('../models/Event');
 
 // Create feedback
 const createFeedback = async (req, res) => {
   try {
     const { rating, comment, eventId } = req.body;
-    const UserId = req.user.id; // From JWT middleware
+    const UserId = req.user.id;
 
     if (!rating || !eventId) {
       return res.status(400).json({ message: 'Rating and Event ID are required' });
@@ -66,12 +66,12 @@ const deleteFeedback = async (req, res) => {
       return res.status(404).json({ message: 'Feedback not found' });
     }
 
-    // Ensure the logged-in user is the owner
+    //  logged-in user is the owner
     if (feedback.userId.toString() !== userId) {
       return res.status(403).json({ message: 'Unauthorized to delete this feedback' });
     }
 
-    // Remove feedback from the associated event
+    // Remove feedback 
     await Event.findByIdAndUpdate(feedback.eventId, {
       $pull: {
         comments: feedback._id,
